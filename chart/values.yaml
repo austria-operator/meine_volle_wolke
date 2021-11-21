@@ -1,4 +1,4 @@
-# Default values for image_uploader.
+# Default values for meine-volle-wolke.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -14,6 +14,10 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+
+serviceAccount:
+  create: false
+  name: ""
 
 podAnnotations: {}
 

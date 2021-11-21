@@ -7,7 +7,7 @@
   "dependencies": {
     "ddgimages-node": "^1.0.1"
   },
-  "name": "fpoe_image_uploader",
+  "name": "fpoe_meine-volle-wolke",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {

@@ -1,16 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "image_uploader.fullname" . }}
+  name: {{ include "meine-volle-wolke.fullname" . }}
   labels:
-    {{- include "image_uploader.labels" . | nindent 4 }}
+    {{- include "meine-volle-wolke.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
-      {{- include "image_uploader.selectorLabels" . | nindent 6 }}
+      {{- include "meine-volle-wolke.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +16,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "image_uploader.selectorLabels" . | nindent 8 }}
+        {{- include "meine-volle-wolke.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "image_uploader.serviceAccountName" . }}
+      serviceAccountName: {{ include "meine-volle-wolke.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
