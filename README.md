@@ -19,7 +19,7 @@ docker run --name mvw --rm austriaoperator/meine_volle_wolke "image search term"
 ## Helm
 
 ```sh
-helm install mvw --set replicaCount=1 ./chart
-helm upgrade mvw --set replicaCount=5 ./chart
+helm install mvw --set searchString="Pony" --set replicaCount=1 ./chart
+helm upgrade mvw --set searchString="Pony" --set replicaCount=5 ./chart
 helm remove mvw
 ```
