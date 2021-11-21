@@ -1,10 +1,9 @@
-FROM node:14-alpine3.12
+FROM node:alpine
 
 RUN apk add curl bash
 
-RUN curl -O 'https://raw.githubusercontent.com/tavinus/cloudsend.sh/v2.2.1/cloudsend.sh' \
-    && chmod +x cloudsend.sh
-RUN mv cloudsend.sh /bin/cloudsend.sh
+RUN curl -o /bin/cloudsend.sh 'https://raw.githubusercontent.com/tavinus/cloudsend.sh/v2.2.1/cloudsend.sh' \
+    && chmod +x /bin/cloudsend.sh
 
 RUN addgroup -g 1001 -S nonroot && \
     adduser -u 1001 -S nonroot -G nonroot
